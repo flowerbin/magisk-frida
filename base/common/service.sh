@@ -16,6 +16,10 @@ done
 # ensure boot has actually completed
 sleep 5
 
+if [ ! -f "$MODPATH/autostart" ]; then
+  exit 0
+fi
+
 # restart on crash
 while true; do
     frida-server

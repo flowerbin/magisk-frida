@@ -164,6 +164,9 @@ on_install() {
   $UNZIP -qq -o "$ZIPFILE" "files/frida-server-$F_ARCH" -j -d "$F_TARGETDIR"
 
   mv "$F_TARGETDIR/frida-server-$F_ARCH" "$F_TARGETDIR/frida-server"
+
+  touch "$MODPATH/autostart"
+  ui_print "autostart file: $MODPATH/autostart"
 }
 
 # Only some special files require specific permissions
